@@ -8,13 +8,32 @@ class GridViewOrnek extends StatelessWidget
     return GridView.builder(
       itemCount: 100,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount : 3
+          crossAxisCount : 2
       ),
       itemBuilder: (BuildContext ctx, int index)
       {
         return Container(
           alignment: Alignment.center,
-          color : Colors.teal[100 * (index % 9)],
+          decoration: BoxDecoration(
+            color : Colors.red[100 * (index % 9)],
+            border: Border.all(
+              color: Colors.black,
+              width: 2
+            ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(5.0)
+            ),
+            gradient: LinearGradient(
+              colors: [Colors.red,Colors.yellow],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+            image: DecorationImage(
+              image: AssetImage("assets/images/resim.png"),
+              fit: BoxFit.fill
+            )
+          ),
+          margin: EdgeInsets.all(20),
           child: Text(
             "Merhaba Flutter",
             textAlign: TextAlign.center,
