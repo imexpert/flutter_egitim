@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_egitimleri/Screen/etkin_listview.dart';
+import 'Screen/etkin_listview.dart';
 import 'Screen/ListeDersleri.dart';
+import 'Screen/gridview_kullanimi.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -13,7 +14,7 @@ void main() {
         "Listview Dersleri",
         style: TextStyle(color: Colors.white),
       )),
-      body: EtkinListeOrnek(),
+      body: GridViewOrnek(),
     ),
   ));
 }
