@@ -57,18 +57,34 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             RaisedButton(
               child: Text(
-                "Artır"
+                "Artır",
               ),
+              color: Colors.blue,
+              onPressed: (){
+                setState(() {
+                  widget.sayac++;
+                  debugPrint(widget.sayac.toString());
+                });
+              },
             ),
             Text("Butona basılma sayısı :"),
             Text(
               "${widget.sayac}",
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.display1.copyWith(
+                color: widget.sayac < 0 ? Colors.red: Colors.black
+              ),
             ),
             RaisedButton(
               child: Text(
                   "Azalt",
               ),
+              color: Colors.red,
+              onPressed: (){
+                setState(() {
+                  widget.sayac--;
+                  debugPrint(widget.sayac.toString());
+                });
+              },
             ),
           ],
         ),
